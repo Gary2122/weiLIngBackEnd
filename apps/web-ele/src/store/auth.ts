@@ -4,7 +4,7 @@
  * @Author: Garrison
  * @Date: 2025-05-19 10:47:34
  * @LastEditors: sueRimn
- * @LastEditTime: 2025-05-19 14:59:59
+ * @LastEditTime: 2025-05-19 15:38:53
  */
 import type { Recordable, UserInfo } from '@vben/types';
 
@@ -41,7 +41,7 @@ export const useAuthStore = defineStore('auth', () => {
     let userInfo: null | UserInfo = null;
     try {
       loginLoading.value = true;
-      const { accessToken } = await loginApi(params);
+      const { token: accessToken } = await loginApi(params);
       // console.log(res);
       // const accessToken = res.data.token;
 

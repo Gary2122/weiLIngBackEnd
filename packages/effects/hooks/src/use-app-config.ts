@@ -1,3 +1,11 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: Garrison
+ * @Date: 2025-05-19 15:09:57
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2025-05-19 15:31:51
+ */
 import type {
   ApplicationConfig,
   VbenAdminProAppConfigRaw,
@@ -18,7 +26,7 @@ export function useAppConfig(
   const { VITE_GLOB_API_URL } = config;
 
   return {
-    apiURL: VITE_GLOB_API_URL,
-    // apiURL: 'http://localhost:3000',
+    // apiURL: VITE_GLOB_API_URL,
+    apiURL: 'http://localhost:3000',
   };
 }

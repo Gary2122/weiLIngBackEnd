@@ -21,23 +21,25 @@ export const defaultResponseInterceptor = ({
   return {
     fulfilled: (response) => {
       const { config, data: responseData, status } = response;
-
+      console.log('responseData', responseData);
+      // if (responseData.code === 200) {
       if (config.responseReturn === 'raw') {
         return response;
       }
 
       if (status >= 200 && status < 400) {
-        if (config.responseReturn === 'body') {
-          return responseData;
-        } else if (
-          isFunction(successCode)
-            ? successCode(responseData[codeField])
-            : responseData[codeField] === successCode
-        ) {
-          return isFunction(dataField)
-            ? dataField(responseData)
-            : responseData[dataField];
-        }
+        return responseData;
+        // if (config.responseReturn === 'body') {
+        //   return responseData;
+        // } else if (
+        //   isFunction(successCode)
+        //     ? successCode(responseData[codeField])
+        //     : responseData[codeField] === successCode
+        // ) {
+        //   return isFunction(dataField)
+        //     ? dataField(responseData)
+        //     : responseData[dataField];
+        // }
       }
       throw Object.assign({}, response, { response });
     },

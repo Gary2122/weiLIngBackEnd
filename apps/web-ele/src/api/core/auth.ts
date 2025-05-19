@@ -1,3 +1,11 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: Garrison
+ * @Date: 2025-05-19 15:09:56
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2025-05-19 15:29:15
+ */
 import { baseRequestClient, requestClient } from '#/api/request';
 
 export namespace AuthApi {
@@ -22,8 +30,8 @@ export namespace AuthApi {
  * 登录
  */
 export async function loginApi(data: AuthApi.LoginParams) {
-  return requestClient.post<AuthApi.LoginResult>('auth/login', data);
-  // return requestClient.post<AuthApi.LoginResult>('api/admin/auth/login', data);
+  // return requestClient.post<AuthApi.LoginResult>('auth/login', data);
+  return requestClient.post<AuthApi.LoginResult>('api/admin/auth/login', data);
 }
 
 /**
