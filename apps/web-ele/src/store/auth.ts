@@ -4,7 +4,7 @@
  * @Author: Garrison
  * @Date: 2025-05-19 10:47:34
  * @LastEditors: sueRimn
- * @LastEditTime: 2025-05-19 15:38:53
+ * @LastEditTime: 2025-05-19 15:40:15
  */
 import type { Recordable, UserInfo } from '@vben/types';
 
@@ -42,9 +42,6 @@ export const useAuthStore = defineStore('auth', () => {
     try {
       loginLoading.value = true;
       const { token: accessToken } = await loginApi(params);
-      // console.log(res);
-      // const accessToken = res.data.token;
-
       console.log(accessToken);
       // 如果成功获取到 accessToken
       if (accessToken) {

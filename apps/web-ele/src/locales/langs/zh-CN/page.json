@@ -7,8 +7,14 @@
     "forgetPassword": "忘记密码"
   },
   "dashboard": {
-    "title": "概览",
-    "analytics": "分析页",
+    "title": "统计",
+    "analytics": "用户分析",
+    "workspace": "工作台",
+    "statistics": "人员统计"
+  },
+  "user": {
+    "title": "用户管理",
+    "analytics": "用户分析",
     "workspace": "工作台",
     "statistics": "人员统计"
   }
