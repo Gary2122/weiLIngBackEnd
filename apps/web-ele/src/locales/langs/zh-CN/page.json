@@ -8,14 +8,8 @@
   },
   "dashboard": {
     "title": "统计",
-    "analytics": "用户分析",
     "workspace": "工作台",
-    "statistics": "人员统计"
-  },
-  "user": {
-    "title": "用户管理",
     "analytics": "用户分析",
-    "workspace": "工作台",
     "statistics": "人员统计"
   }
 }

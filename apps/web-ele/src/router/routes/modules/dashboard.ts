@@ -31,15 +31,6 @@ const routes: RouteRecordRaw[] = [
           title: $t('page.dashboard.workspace'),
         },
       },
-      {
-        name: 'Statistics',
-        path: '/statistics',
-        component: () => import('#/views/dashboard/statistics/index.vue'),
-        meta: {
-          icon: 'carbon:workspace',
-          title: $t('page.dashboard.statistics'),
-        },
-      },
     ],
   },
 ];

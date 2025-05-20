@@ -1,3 +1,11 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: Garrison
+ * @Date: 2025-05-19 15:09:57
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2025-05-19 19:39:17
+-->
 <script setup lang="ts">
 import type { WorkbenchTrendItem } from '../typing';
 
@@ -48,7 +56,7 @@ withDefaults(defineProps<Props>(), {
               <!-- eslint-disable vue/no-v-html -->
               <p
                 class="text-foreground/80 *:text-primary mt-1 truncate text-xs leading-5"
-                v-html="item.content"
+                v-html="`<span>发表了帖子</span>`"
               ></p>
             </div>
           </div>

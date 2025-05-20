@@ -1,3 +1,11 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: Garrison
+ * @Date: 2025-05-19 15:09:56
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2025-05-19 19:25:09
+-->
 <script lang="ts" setup>
 import type { EchartsUIType } from '@vben/plugins/echarts';
 
@@ -53,14 +61,6 @@ onMounted(() => {
       },
       trigger: 'axis',
     },
-    // xAxis: {
-    //   axisTick: {
-    //     show: false,
-    //   },
-    //   boundaryGap: false,
-    //   data: Array.from({ length: 18 }).map((_item, index) => `${index + 6}:00`),
-    //   type: 'category',
-    // },
     xAxis: {
       axisTick: {
         show: false,

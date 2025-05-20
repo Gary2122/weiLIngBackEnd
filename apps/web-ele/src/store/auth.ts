@@ -4,7 +4,7 @@
  * @Author: Garrison
  * @Date: 2025-05-19 10:47:34
  * @LastEditors: sueRimn
- * @LastEditTime: 2025-05-19 15:40:15
+ * @LastEditTime: 2025-05-19 20:01:57
  */
 import type { Recordable, UserInfo } from '@vben/types';
 
@@ -18,7 +18,14 @@ import { resetAllStores, useAccessStore, useUserStore } from '@vben/stores';
 import { ElNotification } from 'element-plus';
 import { defineStore } from 'pinia';
 
-import { getAccessCodesApi, getUserInfoApi, loginApi, logoutApi } from '#/api';
+import {
+  getAccessCodesApi,
+  getUserInfoApi,
+  loginApi,
+  logoutApi,
+  getFrontStatisticsApi,
+  getUserLatestPostsApi,
+} from '#/api';
 import { $t } from '#/locales';
 
 export const useAuthStore = defineStore('auth', () => {
@@ -113,6 +120,18 @@ export const useAuthStore = defineStore('auth', () => {
     return userInfo;
   }
 
+  async function getFrontStatistics() {
+    const res = await getFrontStatisticsApi();
+    console.log(res.statistics);
+    return res.statistics;
+  }
+
+  async function getUserLatestPosts() {
+    const res = await getUserLatestPostsApi();
+    console.log(res);
+    return res.posts;
+  }
+
   function $reset() {
     loginLoading.value = false;
   }
@@ -123,5 +142,7 @@ export const useAuthStore = defineStore('auth', () => {
     fetchUserInfo,
     loginLoading,
     logout,
+    getFrontStatistics,
+    getUserLatestPosts,
   };
 });

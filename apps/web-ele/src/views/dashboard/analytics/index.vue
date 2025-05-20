@@ -1,55 +1,42 @@
 <script lang="ts" setup>
+import { onMounted, ref } from 'vue';
 import type { AnalysisOverviewItem } from '@vben/common-ui';
 import type { TabOption } from '@vben/types';
+import { useAuthStore } from '#/store/auth';
 
-import {
-  AnalysisChartCard,
-  AnalysisChartsTabs,
-  AnalysisOverview,
-} from '@vben/common-ui';
-import {
-  SvgBellIcon,
-  SvgCakeIcon,
-  SvgCardIcon,
-  SvgDownloadIcon,
-} from '@vben/icons';
+import { AnalysisChartCard, AnalysisOverview } from '@vben/common-ui';
 
-import AnalyticsTrends from './analytics-trends.vue';
 import AnalyticsVisitsData from './analytics-visits-data.vue';
 import AnalyticsVisitsSales from './analytics-visits-sales.vue';
 import AnalyticsVisitsSource from './analytics-visits-source.vue';
-import AnalyticsVisits from './analytics-visits.vue';
 
-const overviewItems: AnalysisOverviewItem[] = [
+const authStore = useAuthStore();
+const overviewItems = ref<AnalysisOverviewItem[]>([
   {
-    icon: SvgCardIcon,
     title: '用户量',
     totalTitle: '总用户量',
-    totalValue: 120_000,
-    value: 2000,
+    totalValue: 0,
+    value: 0,
   },
   {
-    icon: SvgCakeIcon,
-    title: '访问量',
-    totalTitle: '总访问量',
-    totalValue: 500_000,
-    value: 20_000,
+    title: '群组量',
+    totalTitle: '总群组量',
+    totalValue: 0,
+    value: 0,
   },
   {
-    icon: SvgDownloadIcon,
-    title: '下载量',
-    totalTitle: '总下载量',
-    totalValue: 120_000,
-    value: 8000,
+    title: '帖子量',
+    totalTitle: '总帖子量',
+    totalValue: 0,
+    value: 0,
   },
   {
-    icon: SvgBellIcon,
-    title: '使用量',
-    totalTitle: '总使用量',
-    totalValue: 50_000,
-    value: 5000,
+    title: '消息量',
+    totalTitle: '总消息量',
+    totalValue: 0,
+    value: 0,
   },
-];
+]);
 
 const chartTabs: TabOption[] = [
   {
@@ -61,19 +48,30 @@ const chartTabs: TabOption[] = [
     value: 'visits',
   },
 ];
+
+const getOverviewItems = async () => {
+  const res = await authStore.getFrontStatistics();
+  console.log(res);
+  Object.assign(overviewItems.value, res);
+  console.log(overviewItems.value);
+};
+
+onMounted(() => {
+  getOverviewItems();
+});
 </script>
 
 <template>
   <div class="p-5">
     <AnalysisOverview :items="overviewItems" />
-    <AnalysisChartsTabs :tabs="chartTabs" class="mt-5">
+    <!-- <AnalysisChartsTabs :tabs="chartTabs" class="mt-5">
       <template #trends>
         <AnalyticsTrends />
       </template>
       <template #visits>
         <AnalyticsVisits />
       </template>
-    </AnalysisChartsTabs>
+    </AnalysisChartsTabs> -->
 
     <div class="mt-5 w-full md:flex">
       <AnalysisChartCard class="mt-5 md:mr-4 md:mt-0 md:w-1/3" title="访问数量">

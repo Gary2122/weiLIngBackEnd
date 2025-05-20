@@ -1,3 +1,11 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: Garrison
+ * @Date: 2025-05-19 15:09:56
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2025-05-20 13:50:57
+ */
 export interface UserInfo {
   id: number;
   password: string;
@@ -17,7 +25,7 @@ export const MOCK_USERS: UserInfo[] = [
   },
   {
     id: 1,
-    password: '123456',
+    password: 'admin123',
     realName: 'Admin',
     roles: ['admin'],
     username: 'admin',
@@ -59,17 +67,8 @@ const dashboardMenus = [
     },
     name: 'Dashboard',
     path: '/dashboard',
-    redirect: '/analytics',
+    redirect: '/workspace',
     children: [
-      {
-        name: 'Analytics',
-        path: '/analytics',
-        component: '/dashboard/analytics/index',
-        meta: {
-          affixTab: true,
-          title: 'page.dashboard.analytics',
-        },
-      },
       {
         name: 'Workspace',
         path: '/workspace',
@@ -79,11 +78,12 @@ const dashboardMenus = [
         },
       },
       {
-        name: 'Statistics',
-        path: '/statistics',
-        component: '/dashboard/statistics/index',
+        name: 'Analytics',
+        path: '/analytics',
+        component: '/dashboard/analytics/index',
         meta: {
-          title: '人员统计',
+          affixTab: true,
+          title: 'page.dashboard.analytics',
         },
       },
     ],

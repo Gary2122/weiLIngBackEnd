@@ -41,12 +41,6 @@ const { refresh } = useRefresh();
 
 const rightSlots = computed(() => {
   const list = [{ index: REFERENCE_VALUE + 100, name: 'user-dropdown' }];
-  if (preferences.widget.globalSearch) {
-    list.push({
-      index: REFERENCE_VALUE,
-      name: 'global-search',
-    });
-  }
 
   if (preferencesButtonPosition.value.header) {
     list.push({
@@ -70,12 +64,6 @@ const rightSlots = computed(() => {
     list.push({
       index: REFERENCE_VALUE + 40,
       name: 'fullscreen',
-    });
-  }
-  if (preferences.widget.notification) {
-    list.push({
-      index: REFERENCE_VALUE + 50,
-      name: 'notification',
     });
   }
 

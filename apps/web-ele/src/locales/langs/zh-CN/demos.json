@@ -1,5 +1,6 @@
 {
   "title": "管理",
   "elementPlus": "用户管理",
-  "form": "用户搜索"
+  "form": "用户搜索",
+  "group": "群组管理"
 }

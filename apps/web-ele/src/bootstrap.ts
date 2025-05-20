@@ -1,3 +1,11 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: Garrison
+ * @Date: 2025-05-19 15:09:56
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2025-05-20 12:34:06
+ */
 import { createApp, watchEffect } from 'vue';
 
 import { registerAccessDirective } from '@vben/access';
@@ -8,8 +16,9 @@ import '@vben/styles';
 import '@vben/styles/ele';
 
 import { useTitle } from '@vueuse/core';
+import ElementPlus from 'element-plus';
 import { ElLoading } from 'element-plus';
-
+import 'element-plus/dist/index.css';
 import { $t, setupI18n } from '#/locales';
 
 import { initComponentAdapter } from './adapter/component';
@@ -28,7 +37,7 @@ async function bootstrap(namespace: string) {
   //   zIndex: 2000,
   // });
   const app = createApp(App);
-
+  app.use(ElementPlus);
   // 注册Element Plus提供的v-loading指令
   app.directive('loading', ElLoading.directive);
 

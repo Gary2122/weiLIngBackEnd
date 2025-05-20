@@ -1,7 +1,14 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: Garrison
+ * @Date: 2025-05-19 15:09:57
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2025-05-19 19:08:47
+ */
 import type { Component } from 'vue';
 
 interface AnalysisOverviewItem {
-  icon: Component | string;
   title: string;
   totalTitle: string;
   totalValue: number;
@@ -20,7 +27,6 @@ interface WorkbenchProjectItem {
 
 interface WorkbenchTrendItem {
   avatar: string;
-  content: string;
   date: string;
   title: string;
 }

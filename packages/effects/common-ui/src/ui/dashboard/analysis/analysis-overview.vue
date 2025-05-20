@@ -1,3 +1,11 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: Garrison
+ * @Date: 2025-05-19 15:09:57
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2025-05-19 19:04:14
+-->
 <script setup lang="ts">
 import type { AnalysisOverviewItem } from '../typing';
 
@@ -8,7 +16,6 @@ import {
   CardHeader,
   CardTitle,
   VbenCountToAnimator,
-  VbenIcon,
 } from '@vben-core/shadcn-ui';
 
 interface Props {
@@ -39,7 +46,6 @@ withDefaults(defineProps<Props>(), {
             class="text-xl"
             prefix=""
           />
-          <VbenIcon :icon="item.icon" class="size-8 flex-shrink-0" />
         </CardContent>
         <CardFooter class="justify-between">
           <span>{{ item.totalTitle }}</span>
