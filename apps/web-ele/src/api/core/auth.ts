@@ -4,7 +4,7 @@
  * @Author: Garrison
  * @Date: 2025-05-19 15:09:56
  * @LastEditors: sueRimn
- * @LastEditTime: 2025-05-20 13:02:56
+ * @LastEditTime: 2025-06-08 10:37:46
  */
 import { baseRequestClient, requestClient } from '#/api/request';
 
@@ -123,4 +123,25 @@ export async function getAllUsersApi(params: GetAllUsersParams) {
   return requestClient.get<GetAllUsersResponse>('api/admin/auth/users', {
     params,
   });
+}
+
+// 获取论坛全部帖子
+export async function getAllPostsApi(params: {
+  page?: number;
+  pageSize?: number;
+  search?: string;
+}) {
+  return requestClient.get('api/admin/auth/posts', {
+    params,
+  });
+}
+
+//查看某帖子详情
+export async function getPostDetailApi(postId: string) {
+  return requestClient.get(`api/admin/auth/posts/${postId}`);
+}
+
+// 删除帖子
+export async function deletePostApi(postId: string) {
+  return requestClient.delete(`api/admin/auth/posts/${postId}`);
 }

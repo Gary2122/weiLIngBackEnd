@@ -1,6 +1,7 @@
 {
   "title": "管理",
   "elementPlus": "用户管理",
-  "form": "用户搜索",
-  "group": "群组管理"
+  "form": "详情搜索",
+  "group": "群组管理",
+  "forum": "论坛管理"
 }

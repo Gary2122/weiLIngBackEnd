@@ -113,7 +113,7 @@ const quickNavItems: WorkbenchQuickNavItem[] = [
   {
     color: '#4daf1bc9',
     icon: 'ion:key-outline',
-    title: '用户搜索',
+    title: '详情搜索',
     url: '/demos/form',
   },
   {

@@ -4,7 +4,7 @@
  * @Author: Garrison
  * @Date: 2025-05-20 13:22:40
  * @LastEditors: sueRimn
- * @LastEditTime: 2025-05-20 13:29:04
+ * @LastEditTime: 2025-06-08 10:16:09
 -->
 <template>
   <div class="detail-search">
@@ -227,7 +227,6 @@ import {
   getUserDetailsApi,
   deleteGroupApi,
   type UserInfo,
-  type GetAllUsersResponse,
 } from '#/api/core/auth';
 
 // 搜索类型和关键词
