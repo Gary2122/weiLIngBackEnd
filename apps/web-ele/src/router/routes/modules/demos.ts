@@ -4,7 +4,7 @@
  * @Author: Garrison
  * @Date: 2025-05-19 15:09:56
  * @LastEditors: sueRimn
- * @LastEditTime: 2025-06-08 10:11:49
+ * @LastEditTime: 2025-06-08 12:49:50
  */
 import type { RouteRecordRaw } from 'vue-router';
 
@@ -49,7 +49,7 @@ const routes: RouteRecordRaw[] = [
         meta: {
           title: $t('demos.forum'),
         },
-        name: 'Group',
+        name: 'Forum',
         path: '/demos/forum',
         component: () => import('#/views/usercontrol/forumControl/index.vue'),
       },

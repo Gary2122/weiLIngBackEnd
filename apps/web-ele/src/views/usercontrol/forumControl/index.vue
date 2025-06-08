@@ -26,9 +26,21 @@
                 {{ row.anonymous ? '匿名' : '实名' }}
               </el-tag>
               <span class="post-stats">
-                <el-icon><View /></el-icon> {{ row.views || 0 }}
-                <el-icon><ChatDotRound /></el-icon> {{ row.commentCount || 0 }}
-                <el-icon><Star /></el-icon> {{ row.likes || 0 }}
+                <span
+                  ><svg class="iconSize" aria-hidden="true">
+                    <use xlink:href="#icon-xihuan"></use></svg
+                  >{{ row.views || 0 }}</span
+                >
+                <span
+                  ><svg class="iconSize" aria-hidden="true">
+                    <use xlink:href="#icon-pinglun"></use></svg
+                  >{{ row.commentCount || 0 }}</span
+                >
+                <span
+                  ><svg class="iconSize" aria-hidden="true">
+                    <use xlink:href="#icon-shoucang-copy"></use></svg
+                  >{{ row.likes || 0 }}</span
+                >
               </span>
             </div>
           </div>
@@ -129,13 +141,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { ElMessage, ElMessageBox } from 'element-plus';
-// import { View, ChatDotRound, Star } from '@element-plus/icons-vue';
 import dayjs from 'dayjs';
-import {
-  getAllPostsApi,
-  getPostDetailApi,
-  deletePostApi,
-} from '#/api/core/auth';
+import { getAllPostsApi, deletePostApi } from '#/api/core/auth';
 
 // 状态变量
 const loading = ref(false);
@@ -228,7 +235,7 @@ onMounted(() => {
 });
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .forum-control {
   padding: 20px;
 }
@@ -265,6 +272,11 @@ onMounted(() => {
   display: flex;
   align-items: center;
   gap: 8px;
+  & > span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
 }
 
 .post-stats .el-icon {
@@ -318,5 +330,10 @@ onMounted(() => {
   display: flex;
   justify-content: flex-end;
   gap: 12px;
+}
+
+.iconSize {
+  width: 16px;
+  height: 16px;
 }
 </style>
